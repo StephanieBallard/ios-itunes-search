@@ -9,7 +9,7 @@
         <!--iTunes Search-->
         <scene sceneID="90B-0C-dxR">
             <objects>
-                <tableViewController id="Jzf-Xu-dzl" sceneMemberID="viewController">
+                <tableViewController id="Jzf-Xu-dzl" customClass="SearchResultsTableViewController" customModule="i_Tunes_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4II-Ds-wce">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,22 +18,34 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tkz-23-egF">
-                                    <rect key="frame" x="113" y="8" width="188" height="32"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <segments>
-                                        <segment title="Apps"/>
-                                        <segment title="Music"/>
-                                        <segment title="Movies"/>
-                                    </segments>
-                                </segmentedControl>
-                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acP-ND-hE4">
-                                    <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-sR-hqx">
+                                    <rect key="frame" x="20" y="8" width="374" height="84"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tkz-23-egF">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="Qq5-wg-BsC"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="Apps"/>
+                                                <segment title="Music"/>
+                                                <segment title="Movies"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="acP-ND-hE4">
+                                            <rect key="frame" x="0.0" y="39" width="374" height="45"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="HuF-sR-hqx" secondAttribute="trailing" constant="20" id="8md-cR-xqo"/>
+                                <constraint firstItem="HuF-sR-hqx" firstAttribute="top" secondItem="fTn-5C-8in" secondAttribute="top" constant="8" id="XhF-0H-8f8"/>
+                                <constraint firstAttribute="bottom" secondItem="HuF-sR-hqx" secondAttribute="bottom" constant="8" id="gLh-vI-Xep"/>
+                                <constraint firstItem="HuF-sR-hqx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fTn-5C-8in" secondAttribute="leading" constant="20" id="tVP-9b-6Rp"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="33h-f2-Hx7" detailTextLabel="b21-wV-ZcG" style="IBUITableViewCellStyleSubtitle" id="ewV-7K-tOl">
@@ -67,6 +79,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="bHx-LR-K5W"/>
+                    <connections>
+                        <outlet property="searchBar" destination="acP-ND-hE4" id="qiD-ks-OCy"/>
+                        <outlet property="segmentedControl" destination="Tkz-23-egF" id="GI9-If-3ds"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53b-pq-IMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
