@@ -10,6 +10,8 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    let searchResultsController = SearchResultController()
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -25,25 +27,21 @@ class SearchResultsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleArtistCell", for: indexPath)
+        
+        let result = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = result.title
+        cell.detailTextLabel?.text = result.creator
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
