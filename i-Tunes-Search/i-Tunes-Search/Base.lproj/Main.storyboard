@@ -19,13 +19,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-sR-hqx">
-                                    <rect key="frame" x="20" y="8" width="374" height="84"/>
+                                    <rect key="frame" x="20" y="2.5" width="374" height="95"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tkz-23-egF">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="31" id="Qq5-wg-BsC"/>
-                                            </constraints>
                                             <segments>
                                                 <segment title="Apps"/>
                                                 <segment title="Music"/>
@@ -33,7 +30,7 @@
                                             </segments>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="acP-ND-hE4">
-                                            <rect key="frame" x="0.0" y="39" width="374" height="45"/>
+                                            <rect key="frame" x="0.0" y="39" width="374" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
@@ -41,10 +38,8 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="HuF-sR-hqx" secondAttribute="trailing" constant="20" id="8md-cR-xqo"/>
-                                <constraint firstItem="HuF-sR-hqx" firstAttribute="top" secondItem="fTn-5C-8in" secondAttribute="top" constant="8" id="XhF-0H-8f8"/>
-                                <constraint firstAttribute="bottom" secondItem="HuF-sR-hqx" secondAttribute="bottom" constant="8" id="gLh-vI-Xep"/>
-                                <constraint firstItem="HuF-sR-hqx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fTn-5C-8in" secondAttribute="leading" constant="20" id="tVP-9b-6Rp"/>
+                                <constraint firstItem="HuF-sR-hqx" firstAttribute="centerY" secondItem="fTn-5C-8in" secondAttribute="centerY" id="RSt-NB-E84"/>
+                                <constraint firstItem="HuF-sR-hqx" firstAttribute="centerX" secondItem="fTn-5C-8in" secondAttribute="centerX" id="wgG-wy-gTO"/>
                             </constraints>
                         </view>
                         <prototypes>

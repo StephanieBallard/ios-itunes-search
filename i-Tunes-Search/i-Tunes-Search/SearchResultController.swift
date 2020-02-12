@@ -29,6 +29,7 @@ class SearchResultController {
         
         urlComponents?.queryItems = [searchTermQueryItem]
         
+        
         guard let requestURL = urlComponents?.url else {
             print("request URL is nil")
             completion()
